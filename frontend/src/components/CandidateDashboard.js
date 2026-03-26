@@ -305,7 +305,7 @@ const TopicBadge = ({ text }) => (
 );
 
 // --- MODAL COMPONENT ---
-const ApplyModal = ({ job, onClose, user, profile, handleApply }) => {
+const ApplyModal = ({ job, onClose, user, profile, handleApply, alreadyApplied }) => {
   const [newResume, setNewResume] = useState(null);
   
   if (!job) return null;
@@ -355,10 +355,10 @@ const ApplyModal = ({ job, onClose, user, profile, handleApply }) => {
           <button onClick={onClose} className="flex-1 py-5 font-black text-slate-400 hover:text-slate-900 transition-all uppercase tracking-widest text-xs">Dismiss</button>
           <button
             onClick={() => handleApply(job, newResume)}
-            disabled={myApplications.some(a => a.job_id === job.job_id)}
-            className={`flex-[2.5] py-5 rounded-2xl text-xs font-black uppercase tracking-[0.2em] shadow-2xl flex items-center justify-center gap-3 active:scale-95 transition-all ${myApplications.some(a => a.job_id === job.job_id) ? 'bg-slate-100 text-slate-400 cursor-not-allowed shadow-none' : 'bg-slate-950 text-white'}`}
+            disabled={alreadyApplied}
+            className={`flex-[2.5] py-5 rounded-2xl text-xs font-black uppercase tracking-[0.2em] shadow-2xl flex items-center justify-center gap-3 active:scale-95 transition-all ${alreadyApplied ? 'bg-slate-100 text-slate-400 cursor-not-allowed shadow-none' : 'bg-slate-950 text-white'}`}
           >
-            {myApplications.some(a => a.job_id === job.job_id) ? 'Already Applied' : 'Submit Application'} {!myApplications.some(a => a.job_id === job.job_id) && <ChevronRight size={18} />}
+            {alreadyApplied ? 'Already Applied' : 'Submit Application'} {!alreadyApplied && <ChevronRight size={18} />}
           </button>
         </div>
       </div>
