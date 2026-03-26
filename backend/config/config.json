@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "997662",
+    "password": "nandhinirani",
     "database": "talentpool",
     "host": "127.0.0.1",
     "dialect": "mysql"
