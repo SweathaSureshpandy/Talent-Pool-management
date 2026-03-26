@@ -5,7 +5,7 @@ import { Globe, ArrowLeft, Building2, ShieldCheck, Mail, Briefcase, Loader2, X, 
 const HrRegistration = () => {
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
-  
+
   // States
   const [isProcessing, setIsProcessing] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
@@ -64,7 +64,7 @@ const HrRegistration = () => {
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-center py-12 px-4 relative font-sans text-slate-900">
-      
+
       {/* Decorative soft blue blur orb */}
       <div className="absolute -top-20 -right-20 w-96 h-96 bg-blue-50 rounded-full blur-[120px] pointer-events-none opacity-70"></div>
 
@@ -76,8 +76,8 @@ const HrRegistration = () => {
           </div>
           Talent<span className="text-blue-600">Pool</span>
         </div>
-        <button 
-          onClick={() => navigate('/register')} 
+        <button
+          onClick={() => navigate('/register')}
           className="flex items-center gap-2 text-slate-400 hover:text-slate-900 font-bold text-[10px] uppercase tracking-widest transition-all"
         >
           <ArrowLeft size={16} /> Back to Selection
@@ -86,7 +86,7 @@ const HrRegistration = () => {
 
       {/* Main Card */}
       <div className="bg-white w-full max-w-3xl rounded-[3rem] shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-slate-100 overflow-hidden z-10 animate-in fade-in slide-in-from-bottom-5 duration-700">
-        
+
         {/* Card Header */}
         <div className="p-10 border-b border-slate-50 text-center bg-slate-50/50">
           <div className="inline-flex items-center gap-2 bg-blue-100 px-3 py-1 rounded-full border border-blue-200 mb-4">
@@ -99,7 +99,7 @@ const HrRegistration = () => {
 
         <form className="p-10 space-y-10" onSubmit={handleHrRegister}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            
+
             {/* Left Column: Personal Identity */}
             <div className="space-y-6">
               <div className="flex items-center gap-3 text-blue-600 font-black text-[10px] uppercase tracking-[0.2em] ml-2">
@@ -137,18 +137,18 @@ const HrRegistration = () => {
               <ShieldCheck size={16} /> Business Authentication
             </div>
 
-            <input 
-              type="file" 
+            <input
+              type="file"
               ref={fileInputRef}
-              className="hidden" 
-              id="incorp-upload" 
-              accept=".pdf,.jpg,.png" 
+              className="hidden"
+              id="incorp-upload"
+              accept=".pdf,.jpg,.png"
               onChange={handleFileChange}
             />
 
             {!selectedFile ? (
               /* EMPTY STATE */
-              <label 
+              <label
                 htmlFor="incorp-upload"
                 className="border-2 border-dashed border-slate-200 rounded-[2rem] p-10 flex flex-col items-center justify-center bg-slate-50 hover:bg-slate-100/50 hover:border-blue-200 transition-all cursor-pointer group"
               >
@@ -175,7 +175,7 @@ const HrRegistration = () => {
                     </p>
                   </div>
                 </div>
-                <button 
+                <button
                   type="button"
                   onClick={removeFile}
                   className="p-2 hover:bg-red-50 text-slate-400 hover:text-red-500 rounded-full transition-colors"
@@ -187,8 +187,8 @@ const HrRegistration = () => {
           </section>
 
           {/* Registration Button */}
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             disabled={isProcessing}
             className="w-full bg-blue-600 text-white font-black py-5 rounded-2xl shadow-xl shadow-blue-100 hover:bg-blue-700 transition-all transform active:scale-[0.98] tracking-[0.2em] text-xs uppercase flex items-center justify-center gap-3"
           >

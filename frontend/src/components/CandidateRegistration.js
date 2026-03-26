@@ -82,7 +82,7 @@ const CandidateRegistration = () => {
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-center py-12 px-4 relative font-sans text-slate-900">
-      
+
       {/* Decorative background orbs */}
       <div className="absolute top-0 -left-20 w-96 h-96 bg-purple-50 rounded-full blur-[120px] pointer-events-none opacity-60"></div>
       <div className="absolute bottom-0 -right-20 w-96 h-96 bg-blue-50 rounded-full blur-[120px] pointer-events-none opacity-60"></div>
@@ -95,8 +95,8 @@ const CandidateRegistration = () => {
           </div>
           Talent<span className="text-purple-600">Pool</span>
         </div>
-        <button 
-          onClick={() => navigate('/register')} 
+        <button
+          onClick={() => navigate('/register')}
           className="flex items-center gap-2 text-slate-400 hover:text-slate-900 font-bold text-[10px] uppercase tracking-widest transition-all"
         >
           <ArrowLeft size={16} /> Back to Selection
@@ -105,7 +105,7 @@ const CandidateRegistration = () => {
 
       {/* Main Form Card */}
       <div className="bg-white w-full max-w-3xl rounded-[3rem] shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-slate-100 overflow-hidden z-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
-        
+
         <div className="p-10 border-b border-slate-50 text-center bg-slate-50/50">
           <div className="inline-flex items-center gap-2 bg-purple-100 px-3 py-1 rounded-full border border-purple-200 mb-4">
             <ShieldCheck size={14} className="text-purple-600" />
@@ -116,7 +116,7 @@ const CandidateRegistration = () => {
         </div>
 
         <form className="p-10 space-y-10" onSubmit={handleFinalRegister}>
-          
+
           {/* Section 1: Account */}
           <section className="space-y-6">
             <div className="flex items-center gap-3 text-purple-600 font-black text-[10px] uppercase tracking-[0.2em] ml-2">
@@ -155,8 +155,8 @@ const CandidateRegistration = () => {
                   </button>
                 </div>
               ))}
-              <input 
-                type="text" 
+              <input
+                type="text"
                 value={skillInput}
                 onChange={(e) => setSkillInput(e.target.value)}
                 onKeyDown={handleSkillKeyDown}
@@ -172,17 +172,17 @@ const CandidateRegistration = () => {
               <Upload size={16} /> Verification Documents
             </div>
 
-            <input 
-              type="file" 
+            <input
+              type="file"
               ref={fileInputRef}
-              className="hidden" 
-              id="resume-upload" 
-              accept=".pdf,.doc,.docx" 
+              className="hidden"
+              id="resume-upload"
+              accept=".pdf,.doc,.docx"
               onChange={handleFileChange}
             />
 
             {!selectedFile ? (
-              <label 
+              <label
                 htmlFor="resume-upload"
                 className="border-2 border-dashed border-slate-200 rounded-[2rem] p-12 flex flex-col items-center justify-center bg-slate-50 hover:bg-slate-100/50 hover:border-purple-200 transition-all cursor-pointer group"
               >
@@ -208,7 +208,7 @@ const CandidateRegistration = () => {
                     </p>
                   </div>
                 </div>
-                <button 
+                <button
                   type="button"
                   onClick={removeFile}
                   className="p-2 hover:bg-red-50 text-slate-400 hover:text-red-500 rounded-full transition-colors"
@@ -219,8 +219,8 @@ const CandidateRegistration = () => {
             )}
           </section>
 
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             disabled={isRegistering}
             className="w-full bg-purple-600 text-white font-black py-5 rounded-2xl shadow-xl shadow-purple-100 hover:bg-purple-700 transition-all transform active:scale-[0.98] tracking-[0.2em] text-xs uppercase flex items-center justify-center gap-3"
           >

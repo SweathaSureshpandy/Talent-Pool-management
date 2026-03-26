@@ -17,8 +17,14 @@ module.exports = (sequelize, DataTypes) => {
 
   skills.associate = (models) => {
     skills.belongsToMany(models.students, {
-      through: models.student_skills,
-      foreignKey: 'skill_id'
+      through: 'student_skills',
+      foreignKey: 'skill_id',
+      otherKey: 'student_id'
+    });
+    skills.belongsToMany(models.jobs, {
+      through: 'job_skills',
+      foreignKey: 'skill_id',
+      otherKey: 'job_id'
     });
   };
 

@@ -13,7 +13,8 @@ module.exports = (sequelize, DataTypes) => {
     company_name: DataTypes.STRING,
     website_url: DataTypes.STRING,
     industry_type: DataTypes.STRING,
-    industry_id: DataTypes.STRING
+    industry_id: DataTypes.STRING,
+    incorporation_cert: DataTypes.STRING
   }, {
     timestamps: false,
     tableName: 'hr',        // ✅ ADD THIS

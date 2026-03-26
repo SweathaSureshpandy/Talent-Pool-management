@@ -29,17 +29,21 @@ const Home = () => {
       });
       const data = await res.json();
 
+      console.log("Login Response Data:", data);
       if (res.ok) {
         if (data.token) localStorage.setItem("token", data.token);
+        if (data.user) localStorage.setItem("user", JSON.stringify(data.user));
         
-        if (data.role === "student") navigate("/candidate/dashboard");
-        else if (data.role === "hr") navigate("/hr/dashboard");
-        else if (data.role === "admin") navigate("/admin/dashboard");
+        const role = data.role?.toLowerCase();
+        if (role === "student") navigate("/candidate/dashboard");
+        else if (role === "hr") navigate("/hr/dashboard");
+        else if (role === "admin") navigate("/admin/dashboard");
         else navigate("/"); 
       } else {
         alert(data.message || "Invalid Credentials ❌");
       }
     } catch (error) {
+      console.error("Login Crash:", error);
       alert("Server connection error ❌");
     } finally {
       setIsLoggingIn(false);

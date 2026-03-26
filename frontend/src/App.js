@@ -37,7 +37,7 @@ function App() {
         <Route path="/register/hr" element={<HrRegistration />} />
         
         {/* Main Dashboard */}
-        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/candidate/dashboard" element={<CandidateDashboard />} />
         <Route path="/hr/dashboard" element={<HrDashboard />} />
       </Routes>
