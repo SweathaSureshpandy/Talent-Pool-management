@@ -1,0 +1,14 @@
+.home-bg{
+height:100vh;
+background-image:url("https://images.unsplash.com/photo-1551434678-e076c223a692");
+background-size:cover;
+background-position:center;
+}
+
+.overlay{
+height:100%;
+background:rgba(0,0,0,0.65);
+display:flex;
+align-items:center;
+justify-content:center;
+}
